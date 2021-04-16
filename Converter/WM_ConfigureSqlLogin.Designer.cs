@@ -37,6 +37,7 @@
             // 
             this.textBox_PASStoConfigureSQL.Location = new System.Drawing.Point(107, 51);
             this.textBox_PASStoConfigureSQL.Name = "textBox_PASStoConfigureSQL";
+            this.textBox_PASStoConfigureSQL.PasswordChar = '*';
             this.textBox_PASStoConfigureSQL.Size = new System.Drawing.Size(116, 20);
             this.textBox_PASStoConfigureSQL.TabIndex = 0;
             // 
