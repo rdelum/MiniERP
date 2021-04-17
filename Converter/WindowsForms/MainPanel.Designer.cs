@@ -80,6 +80,7 @@
             this.buttonInvoices.TabIndex = 19;
             this.buttonInvoices.Text = "Invoices";
             this.buttonInvoices.UseVisualStyleBackColor = true;
+            this.buttonInvoices.Click += new System.EventHandler(this.buttonInvoices_Click);
             // 
             // buttonStock
             // 
@@ -89,6 +90,7 @@
             this.buttonStock.TabIndex = 20;
             this.buttonStock.Text = "Stock";
             this.buttonStock.UseVisualStyleBackColor = true;
+            this.buttonStock.Click += new System.EventHandler(this.buttonStock_Click);
             // 
             // MainPanel
             // 

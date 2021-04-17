@@ -63,5 +63,17 @@ namespace Converter
             wM_Login.Show();
             Close();
         }
+
+        private void buttonStock_Click(object sender, EventArgs e)
+        {
+            WM_Stock wM_Stock = new WM_Stock();
+            wM_Stock.Show();
+        }
+
+        private void buttonInvoices_Click(object sender, EventArgs e)
+        {
+            WM_Invoices wM_Invoices = new WM_Invoices();
+            wM_Invoices.Show();
+        }
     }
 }
