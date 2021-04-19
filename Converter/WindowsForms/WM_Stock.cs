@@ -20,8 +20,6 @@ namespace Converter
             RefreshStock(allStock);
         }
 
-     
-
 
         public void RefreshStock(List<Stock> allStock)
         {

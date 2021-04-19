@@ -71,19 +71,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\CsvHelper.cs" />
-    <Compile Include="WindowsForm\ConfigureDataBase.cs">
+    <Compile Include="WindowsForms\ConfigureDataBase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WindowsForm\ConfigureDataBase.Designer.cs">
+    <Compile Include="WindowsForms\ConfigureDataBase.Designer.cs">
       <DependentUpon>ConfigureDataBase.cs</DependentUpon>
     </Compile>
     <Compile Include="Container\Contractor.cs" />
     <Compile Include="Container\Invoice.cs" />
     <Compile Include="Container\Stock.cs" />
-    <Compile Include="WindowsForm\MainPanel.cs">
+    <Compile Include="WindowsForms\MainPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WindowsForm\MainPanel.Designer.cs">
+    <Compile Include="WindowsForms\MainPanel.Designer.cs">
       <DependentUpon>MainPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Methods.cs" />
@@ -92,64 +92,64 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Common\SqlHelper.cs" />
-    <Compile Include="WindowsForm\WM_CardNewInvoices.cs">
+    <Compile Include="WindowsForms\WM_CardNewInvoices.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WindowsForm\WM_CardNewInvoices.Designer.cs">
+    <Compile Include="WindowsForms\WM_CardNewInvoices.Designer.cs">
       <DependentUpon>WM_CardNewInvoices.cs</DependentUpon>
     </Compile>
-    <Compile Include="WindowsForm\WM_ConfigureSqlLogin.cs">
+    <Compile Include="WindowsForms\WM_ConfigureSqlLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WindowsForm\WM_ConfigureSqlLogin.Designer.cs">
+    <Compile Include="WindowsForms\WM_ConfigureSqlLogin.Designer.cs">
       <DependentUpon>WM_ConfigureSqlLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="WindowsForm\WM_Contractors.cs">
+    <Compile Include="WindowsForms\WM_Contractors.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WindowsForm\WM_Contractors.Designer.cs">
+    <Compile Include="WindowsForms\WM_Contractors.Designer.cs">
       <DependentUpon>WM_Contractors.cs</DependentUpon>
     </Compile>
-    <Compile Include="WindowsForm\WM_Invoices.cs">
+    <Compile Include="WindowsForms\WM_Invoices.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WindowsForm\WM_Invoices.Designer.cs">
+    <Compile Include="WindowsForms\WM_Invoices.Designer.cs">
       <DependentUpon>WM_Invoices.cs</DependentUpon>
     </Compile>
-    <Compile Include="WindowsForm\WM_Login.cs">
+    <Compile Include="WindowsForms\WM_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WindowsForm\WM_Login.Designer.cs">
+    <Compile Include="WindowsForms\WM_Login.Designer.cs">
       <DependentUpon>WM_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="WindowsForm\WM_NewContractors.cs">
+    <Compile Include="WindowsForms\WM_NewContractors.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WindowsForm\WM_NewContractors.Designer.cs">
+    <Compile Include="WindowsForms\WM_NewContractors.Designer.cs">
       <DependentUpon>WM_NewContractors.cs</DependentUpon>
     </Compile>
-    <Compile Include="WindowsForm\WM_NewUser.cs">
+    <Compile Include="WindowsForms\WM_NewUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WindowsForm\WM_NewUser.Designer.cs">
+    <Compile Include="WindowsForms\WM_NewUser.Designer.cs">
       <DependentUpon>WM_NewUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="WindowsForm\WM_Stock.cs">
+    <Compile Include="WindowsForms\WM_Stock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WindowsForm\WM_Stock.Designer.cs">
+    <Compile Include="WindowsForms\WM_Stock.Designer.cs">
       <DependentUpon>WM_Stock.cs</DependentUpon>
     </Compile>
-    <Compile Include="WindowsForm\WM_StockCard.cs">
+    <Compile Include="WindowsForms\WM_StockCard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WindowsForm\WM_StockCard.Designer.cs">
+    <Compile Include="WindowsForms\WM_StockCard.Designer.cs">
       <DependentUpon>WM_StockCard.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="WindowsForm\ConfigureDataBase.resx">
+    <EmbeddedResource Include="WindowsForms\ConfigureDataBase.resx">
       <DependentUpon>ConfigureDataBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WindowsForm\MainPanel.resx">
+    <EmbeddedResource Include="WindowsForms\MainPanel.resx">
       <DependentUpon>MainPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -161,31 +161,31 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="WindowsForm\WM_CardNewInvoices.resx">
+    <EmbeddedResource Include="WindowsForms\WM_CardNewInvoices.resx">
       <DependentUpon>WM_CardNewInvoices.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WindowsForm\WM_ConfigureSqlLogin.resx">
+    <EmbeddedResource Include="WindowsForms\WM_ConfigureSqlLogin.resx">
       <DependentUpon>WM_ConfigureSqlLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WindowsForm\WM_Contractors.resx">
+    <EmbeddedResource Include="WindowsForms\WM_Contractors.resx">
       <DependentUpon>WM_Contractors.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WindowsForm\WM_Invoices.resx">
+    <EmbeddedResource Include="WindowsForms\WM_Invoices.resx">
       <DependentUpon>WM_Invoices.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WindowsForm\WM_Login.resx">
+    <EmbeddedResource Include="WindowsForms\WM_Login.resx">
       <DependentUpon>WM_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WindowsForm\WM_NewContractors.resx">
+    <EmbeddedResource Include="WindowsForms\WM_NewContractors.resx">
       <DependentUpon>WM_NewContractors.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WindowsForm\WM_NewUser.resx">
+    <EmbeddedResource Include="WindowsForms\WM_NewUser.resx">
       <DependentUpon>WM_NewUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WindowsForm\WM_Stock.resx">
+    <EmbeddedResource Include="WindowsForms\WM_Stock.resx">
       <DependentUpon>WM_Stock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WindowsForm\WM_StockCard.resx">
+    <EmbeddedResource Include="WindowsForms\WM_StockCard.resx">
       <DependentUpon>WM_StockCard.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

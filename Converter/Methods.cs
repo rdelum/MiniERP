@@ -125,6 +125,30 @@ namespace Converter
         }
 
 
+
+
+        public static List<Invoice> GetInvoices(string connectionString)
+        {
+            string SelectAllInvoice = @"Select InvoiceNumber, InvoiceContractorID, InvoiceID, InvoiceElementID, InvoiceDate, InvoiceValueNet, InvoiceValueGross, InvoiceUser  from dbo.Invoices";
+            using (var conn = SqlHelper.OpenConnection(connectionString))
+            {
+                using (var comm = new SqlCommand(SelectAllInvoice, conn))
+                {
+                    using (var reader = comm.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            return SqlHelper.ReadAll(reader, Invoice.ReadInvoice);
+                        }
+                        else
+                            return new List<Invoice>();
+                    }
+
+                }
+            }
+        }
+
+
         public static List<Stock> GetStock(string connectionString)
         {
             string SelectAllProduct = @"Select ProductID, ProductName, ProductPrice from dbo.Stock";

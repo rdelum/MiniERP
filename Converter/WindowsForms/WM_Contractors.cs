@@ -153,7 +153,9 @@ namespace Converter
 
         }
 
+        private void WM_Contractors_Load(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

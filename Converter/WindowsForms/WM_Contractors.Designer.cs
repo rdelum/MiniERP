@@ -202,6 +202,7 @@
             this.Controls.Add(this.dataGridView_Contractors);
             this.Name = "WM_Contractors";
             this.Text = "WM_Contractors";
+            this.Load += new System.EventHandler(this.WM_Contractors_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Contractors)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
