@@ -71,6 +71,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\CsvHelper.cs" />
+    <Compile Include="MethodsContractors.cs" />
+    <Compile Include="MethodsProducts.cs" />
     <Compile Include="WindowsForms\ConfigureDataBase.cs">
       <SubType>Form</SubType>
     </Compile>
