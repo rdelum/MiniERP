@@ -16,7 +16,7 @@ namespace Converter
         public WM_Stock()
         {
             InitializeComponent();
-            var allStock = Methods.GetStock(SqlHelper.getConnection());
+            var allStock = MethodsProducts.GetStock(SqlHelper.getConnection());
             RefreshStock(allStock);
         }
 
@@ -38,7 +38,7 @@ namespace Converter
                 }
                 else
                 {
-                    var allStock = Methods.GetStock(SqlHelper.getConnection());
+                    var allStock = MethodsProducts.GetStock(SqlHelper.getConnection());
                     RefreshStock(allStock);
                 }
             }
@@ -47,15 +47,15 @@ namespace Converter
 
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
-            var allStock = Methods.GetStock(SqlHelper.getConnection());
+            var allStock = MethodsProducts.GetStock(SqlHelper.getConnection());
             RefreshStock(allStock);
         }
 
         private void button_Edit_Click(object sender, EventArgs e)
         {
             var connectionString = SqlHelper.getConnection();
-            Methods.EditProduct(connectionString,textBox_ProductID.Text ,textBox_Name.Text, Convert.ToDecimal(Methods.DotToComma(textBox_Price.Text)));
-            var allStock = Methods.GetStock(SqlHelper.getConnection());
+            MethodsProducts.EditProduct(connectionString,textBox_ProductID.Text ,textBox_Name.Text, Convert.ToDecimal(Methods.DotToComma(textBox_Price.Text)));
+            var allStock = MethodsProducts.GetStock(SqlHelper.getConnection());
             RefreshStock(allStock);
         }
 
@@ -73,10 +73,10 @@ namespace Converter
             try
             {
                 var connectionString = SqlHelper.getConnection();
-                Methods.RemoveProduct(connectionString, textBox_ProductID.Text);
+                MethodsProducts.RemoveProduct(connectionString, textBox_ProductID.Text);
                 string DeletedProduct = (textBox_Name.Text).TrimEnd();
                 MessageBox.Show($"Product: {DeletedProduct} has been deleted");
-                var allStock = Methods.GetStock(SqlHelper.getConnection());
+                var allStock = MethodsProducts.GetStock(SqlHelper.getConnection());
                 RefreshStock(allStock);
 
             }

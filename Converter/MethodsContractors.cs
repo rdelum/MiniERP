@@ -144,6 +144,8 @@ namespace Converter
         }
 
 
+
+
         public static int EditContractor(string connectionString, string parametr1, string parametr2, string parametr3, string parametr4)
         {
             var queryString = @"update dbo.Constructors set Name =@Name, Surname = @Surname, Phone = @Phone where IDBuyer = @IDBuyer";

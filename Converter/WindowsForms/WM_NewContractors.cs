@@ -29,7 +29,7 @@ namespace Converter
             try
             {
                 var connectionString = SqlHelper.getConnection();
-                Methods.AddNewContractor(connectionString, textBox_Name.Text, textBox_Surname.Text, textBox_IDBuyer.Text, textBox_Phone.Text);
+                MethodsContractors.AddNewContractor(connectionString, textBox_Name.Text, textBox_Surname.Text, textBox_IDBuyer.Text, textBox_Phone.Text);
                 MessageBox.Show($"The contractor {textBox_Name.Text} {textBox_Surname.Text} has been added");
     
                 this.Hide();

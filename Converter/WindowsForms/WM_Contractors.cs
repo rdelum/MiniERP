@@ -18,7 +18,7 @@ namespace Converter
         public WM_Contractors()
         {
             InitializeComponent();
-            var allContractors = Methods.GetContractors(SqlHelper.getConnection());
+            var allContractors = MethodsContractors.GetContractors(SqlHelper.getConnection());
             RefreshContractors(allContractors);
         }
         private void button_loadFile_Click(object sender, EventArgs e)
@@ -43,22 +43,22 @@ namespace Converter
 
             if (textBox_ImportFilePath.Text.Contains("csv"))
             {
-                Methods.AddKontrahentFromCSV(textBox_ImportFilePath.Text);
+                MethodsContractors.AddKontrahentFromCSV(textBox_ImportFilePath.Text);
             }
 
             else if (textBox_ImportFilePath.Text.Contains("xml"))
             {
-                Methods.AddKontrahentFromXML(textBox_ImportFilePath.Text);
+                MethodsContractors.AddKontrahentFromXML(textBox_ImportFilePath.Text);
             }
             else if (textBox_ImportFilePath.Text.Contains("json"))
             {
-                Methods.AddKontrahentFromJSON(textBox_ImportFilePath.Text);
+                MethodsContractors.AddKontrahentFromJSON(textBox_ImportFilePath.Text);
             }
             else
             {
                 MessageBox.Show("You did not select the file to import");
             }
-            var allContractors = Methods.GetContractors(SqlHelper.getConnection());
+            var allContractors = MethodsContractors.GetContractors(SqlHelper.getConnection());
             RefreshContractors(allContractors);
         }
 
@@ -72,7 +72,7 @@ namespace Converter
         public void Refresh_Click(object sender, EventArgs e)
         {
             var connectionString = SqlHelper.getConnection();
-            var allContractors = Methods.GetContractors(SqlHelper.getConnection());
+            var allContractors = MethodsContractors.GetContractors(SqlHelper.getConnection());
             RefreshContractors(allContractors);
         }
 
@@ -90,8 +90,8 @@ namespace Converter
             var connectionString = SqlHelper.getConnection();
             try
             {
-                var result = Methods.RemoveContractor(SqlHelper.getConnection(), textBox_IDBuyer.Text);
-                var allContractors = Methods.GetContractors(SqlHelper.getConnection());
+                var result = MethodsContractors.RemoveContractor(SqlHelper.getConnection(), textBox_IDBuyer.Text);
+                var allContractors = MethodsContractors.GetContractors(SqlHelper.getConnection());
                 RefreshContractors(allContractors);
                 MessageBox.Show($"Contractor {textBox_Name.Text} {textBox_Surname.Text} has been deleted");
 
@@ -115,9 +115,9 @@ namespace Converter
             sda.Fill(dt);
             if (dt.Rows[0][0].ToString() == "1")
             {
-                Methods.EditContractor(connectionString, textBox_Name.Text, textBox_Surname.Text, textBox_IDBuyer.Text, textBox_Phone.Text);
+                MethodsContractors.EditContractor(connectionString, textBox_Name.Text, textBox_Surname.Text, textBox_IDBuyer.Text, textBox_Phone.Text);
                 MessageBox.Show($"Contractor {textBox_Name.Text} {textBox_Surname.Text} {textBox_Phone.Text} has been updated");
-                var allContractors = Methods.GetContractors(SqlHelper.getConnection());
+                var allContractors = MethodsContractors.GetContractors(SqlHelper.getConnection());
                 RefreshContractors(allContractors);
             }
             else
@@ -139,7 +139,7 @@ namespace Converter
                 {
                     wM_NewContractors.Show();
 
-                    var allContractors = Methods.GetContractors(SqlHelper.getConnection());
+                    var allContractors = MethodsContractors.GetContractors(SqlHelper.getConnection());
                     RefreshContractors(allContractors);
                 }
 

@@ -45,7 +45,7 @@ namespace Converter
                 WM_Contractors wM_Contractors = new WM_Contractors();
                 wM_Contractors.Show(this);
 
-                var allContractors = Methods.GetContractors(SqlHelper.getConnection());
+                var allContractors = MethodsContractors.GetContractors(SqlHelper.getConnection());
                 wM_Contractors.RefreshContractors(allContractors);
 
                 Properties.Settings.Default.Save();

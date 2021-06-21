@@ -118,5 +118,17 @@ namespace Converter.Properties {
                 this["UserCombobox"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("FV")]
+        public string InvoiceDefinition {
+            get {
+                return ((string)(this["InvoiceDefinition"]));
+            }
+            set {
+                this["InvoiceDefinition"] = value;
+            }
+        }
     }
 }

@@ -47,6 +47,30 @@ namespace Converter
                 }
             }
         }
+        //public static int AddElementToInvoice(string connectionString, string parametr1, string parametr2, string parametr3, string parametr4, string parametr5, string parametr6)
+        public static int AddElementToInvoice(string connectionString, string parametr1, decimal parametr2, decimal parametr3, decimal parametr4, string parametr5, string parametr6)
+        {
+            var queryString = @"INSERT INTO dbo.InvoiceElements (InvoiceID, InvoiceValueNet, InvoiceElementTax, InvoiceValueGross, StockId, InvElemQTY) VALUES(@IvoiceID, @InvoiceValueNet, @InvoiceElementTax , @InvoiceValueGross, @StockId, @QTY)";
+            using (var conn = SqlHelper.OpenConnection(connectionString))
+            {
+                using (var comm = new SqlCommand(queryString, conn))
+                {
+                    comm.Parameters.AddWithValue("@IvoiceID", parametr1);
+                    comm.Parameters.AddWithValue("@InvoiceValueNet", parametr2);
+                    comm.Parameters.AddWithValue("@InvoiceElementTax", parametr3);
+                    comm.Parameters.AddWithValue("@InvoiceValueGross", parametr4);
+                    comm.Parameters.AddWithValue("@StockId", parametr5);
+                    comm.Parameters.AddWithValue("@QTY", parametr6);
+
+                    var result = comm.ExecuteNonQuery();
+
+                    return result;
+                }
+            }
+        }
+
+
+
 
         public static int RemoveProduct(string connectionString, string parametr1)
         {

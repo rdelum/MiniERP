@@ -26,5 +26,8 @@
     <Setting Name="UserCombobox" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="InvoiceDefinition" Type="System.String" Scope="User">
+      <Value Profile="(Default)">FV</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
