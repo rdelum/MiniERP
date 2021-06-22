@@ -43,6 +43,7 @@
             this.button_Edit = new System.Windows.Forms.Button();
             this.button_Delete = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.buttonContractorHistory = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Contractors)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,10 +89,12 @@
             // 
             // textBox_IDBuyer
             // 
+            this.textBox_IDBuyer.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Converter.Properties.Settings.Default, "ContractorID", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textBox_IDBuyer.Location = new System.Drawing.Point(294, 77);
             this.textBox_IDBuyer.Name = "textBox_IDBuyer";
             this.textBox_IDBuyer.Size = new System.Drawing.Size(100, 20);
             this.textBox_IDBuyer.TabIndex = 22;
+            this.textBox_IDBuyer.Text = global::Converter.Properties.Settings.Default.ContractorID;
             // 
             // textBox_Phone
             // 
@@ -173,18 +176,29 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Source Code Pro", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label5.Location = new System.Drawing.Point(313, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(155, 27);
+            this.label5.Size = new System.Drawing.Size(184, 25);
             this.label5.TabIndex = 31;
             this.label5.Text = "CONTRACTORS";
+            // 
+            // buttonContractorHistory
+            // 
+            this.buttonContractorHistory.Location = new System.Drawing.Point(665, 51);
+            this.buttonContractorHistory.Name = "buttonContractorHistory";
+            this.buttonContractorHistory.Size = new System.Drawing.Size(123, 23);
+            this.buttonContractorHistory.TabIndex = 32;
+            this.buttonContractorHistory.Text = "History of orders";
+            this.buttonContractorHistory.UseVisualStyleBackColor = true;
+            this.buttonContractorHistory.Click += new System.EventHandler(this.buttonContractorHistory_Click);
             // 
             // WM_Contractors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonContractorHistory);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button_Delete);
             this.Controls.Add(this.button_Edit);
@@ -226,5 +240,6 @@
         private System.Windows.Forms.Button button_Edit;
         private System.Windows.Forms.Button button_Delete;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button buttonContractorHistory;
     }
 }

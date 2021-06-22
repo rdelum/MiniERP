@@ -15,6 +15,8 @@ namespace Converter
 {
     public partial class WM_Contractors : Form
     {
+
+        public string IdBuyer { get; set; }
         public WM_Contractors()
         {
             InitializeComponent();
@@ -110,7 +112,7 @@ namespace Converter
         {
             var connectionString = SqlHelper.getConnection();
 
-            SqlDataAdapter sda = new SqlDataAdapter("Select UserEditContractor from dbo.Users where UserName ='" + Properties.Settings.Default.UserLogin + "' and UserP ='" + Properties.Settings.Default.UserPass + "'", connectionString);
+            SqlDataAdapter sda = new SqlDataAdapter("Select UserEditContractors from dbo.Users where UserName ='" + Properties.Settings.Default.UserCombobox + "' and UserP ='" + Properties.Settings.Default.UserPass + "'", connectionString);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             if (dt.Rows[0][0].ToString() == "1")
@@ -157,5 +159,13 @@ namespace Converter
         {
 
         }
+
+        private void buttonContractorHistory_Click(object sender, EventArgs e)
+        {
+            WM_ContractorsHistory wM_ContractorsHistory = new WM_ContractorsHistory();
+            wM_ContractorsHistory.Show();
+        }
+
+       
     }
 }

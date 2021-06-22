@@ -43,6 +43,30 @@ namespace Converter
         }
 
 
+
+        public static List<Invoice> ContractorHistory(string connectionString, string parametr1)
+        {
+            string SelectAllInvoice = @"Select InvoiceNumber, InvoiceContractorID, InvoiceID, InvoiceElementID, InvoiceDate, InvoiceValueNet, InvoiceValueGross, InvoiceUser  from dbo.Invoices where InvoiceContractorID = @ContractorID";
+            using (var conn = SqlHelper.OpenConnection(connectionString))
+            {
+                using (var comm = new SqlCommand(SelectAllInvoice, conn))
+                {
+                    comm.Parameters.AddWithValue("@ContractorID", parametr1);
+                    using (var reader = comm.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            return SqlHelper.ReadAll(reader, Invoice.ReadInvoice);
+                        }
+                        else
+                            return new List<Invoice>();
+                    }
+
+                }
+            }
+        }
+
+
         public static List<InvoiceElements> GetInvoiceElements(string connectionString, string parametr1)
         {
             string SelectAllIProductsFromInvoice = @"Select InvoiceElementID , InvoiceID, InvoiceValueNet, InvoiceElementTax, InvoiceValueGross, StockId from dbo.InvoiceElements 
@@ -150,6 +174,7 @@ namespace Converter
             }
 
         }
+
 
 
 

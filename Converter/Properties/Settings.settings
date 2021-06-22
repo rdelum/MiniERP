@@ -29,5 +29,8 @@
     <Setting Name="InvoiceDefinition" Type="System.String" Scope="User">
       <Value Profile="(Default)">FV</Value>
     </Setting>
+    <Setting Name="ContractorID" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

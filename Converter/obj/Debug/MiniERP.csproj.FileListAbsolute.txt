@@ -130,3 +130,4 @@ C:\Users\TomekERP\source\repos\MiniERP\Converter\obj\Debug\MiniERP.csproj.CopyCo
 C:\Users\TomekERP\source\repos\MiniERP\Converter\obj\Debug\Converter.exe
 C:\Users\TomekERP\source\repos\MiniERP\Converter\obj\Debug\Converter.pdb
 C:\Users\TomekERP\source\repos\MiniERP\Converter\obj\Debug\Converter.WM_AddElementsToInvoice.resources
+C:\Users\TomekERP\source\repos\MiniERP\Converter\obj\Debug\Converter.WM_ContractorsHistory.resources
