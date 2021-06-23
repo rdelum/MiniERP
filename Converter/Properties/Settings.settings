@@ -32,5 +32,8 @@
     <Setting Name="ContractorID" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="PassForMail" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Polkas2017!</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

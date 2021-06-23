@@ -10,6 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using System.Net.Mail;
+using System.IO;
 
 namespace Converter
 {
@@ -76,6 +79,18 @@ namespace Converter
                     Methods.AddNewInvoice(connectionString, NumberCurrentInvoice, (DocumentDate).ToString(), Convert.ToDecimal(ValueGross), Convert.ToDecimal(ValueNet), ContractorId, UserID, FullNumberInvoice);
 
                     MessageBox.Show("An invoice has been added");
+
+                    MailMessage mm = new MailMessage("justtesttk@gmail.com", "tomasz.polkas@gmail.com");
+                    mm.Subject = "New invoice from MiniERP";
+                    mm.Body = $"You have new Invoice: \n\r {FullNumberInvoice} in the amount of {ValueGross} EUR";
+                    SmtpClient smtp = new SmtpClient();
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.Port = 587;
+                    System.Net.NetworkCredential nc = new NetworkCredential("justtesttk@gmail.com", Properties.Settings.Default.PassForMail);
+                    smtp.EnableSsl = true;
+                    smtp.Credentials = nc;
+                    smtp.Send(mm);
+                    MessageBox.Show("sent");
                     Close();
                 }
 
@@ -142,7 +157,12 @@ namespace Converter
             var connectionString = SqlHelper.getConnection();
             ContractorId = (Methods.ContractorID(connectionString, comboBoxContractor.Text)).ToString();
         }
-      
 
+        private void buttonSendEmail_Click(object sender, EventArgs e)
+        {
+
+           
+
+        }
     }
 }
