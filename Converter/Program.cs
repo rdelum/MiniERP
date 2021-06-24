@@ -16,7 +16,7 @@ namespace Converter
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WM_CardNewInvoices ());
+            Application.Run(new MainPanel ());
         }
     }
 }

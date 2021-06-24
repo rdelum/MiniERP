@@ -85,6 +85,8 @@ namespace Converter
             textBox_Surname.Text = dataGridView_Contractors.Rows[e.RowIndex].Cells["Surname"].FormattedValue.ToString();
             textBox_IDBuyer.Text = dataGridView_Contractors.Rows[e.RowIndex].Cells["IDBuyer"].FormattedValue.ToString();
             textBox_Phone.Text = dataGridView_Contractors.Rows[e.RowIndex].Cells["Phone"].FormattedValue.ToString();
+            textBox_mail.Text = dataGridView_Contractors.Rows[e.RowIndex].Cells["email"].FormattedValue.ToString();
+
         }
 
         private void button_Delete_Click(object sender, EventArgs e)
@@ -117,7 +119,7 @@ namespace Converter
             sda.Fill(dt);
             if (dt.Rows[0][0].ToString() == "1")
             {
-                MethodsContractors.EditContractor(connectionString, textBox_Name.Text, textBox_Surname.Text, textBox_IDBuyer.Text, textBox_Phone.Text);
+                MethodsContractors.EditContractor(connectionString, textBox_Name.Text, textBox_Surname.Text, textBox_IDBuyer.Text, textBox_Phone.Text, textBox_mail.Text);
                 MessageBox.Show($"Contractor {textBox_Name.Text} {textBox_Surname.Text} {textBox_Phone.Text} has been updated");
                 var allContractors = MethodsContractors.GetContractors(SqlHelper.getConnection());
                 RefreshContractors(allContractors);

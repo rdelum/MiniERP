@@ -14,9 +14,11 @@ namespace Converter
         public string Surname { get; set; }
         public string IDBuyer { get; set; }
         public string Phone { get; set; }
-    
+        public string Email{ get; set; }
 
-    public static Contractor ReadContractor(SqlDataReader reader)
+
+
+        public static Contractor ReadContractor(SqlDataReader reader)
     {
         var ContructorRead = new Contractor()
         {
@@ -24,6 +26,7 @@ namespace Converter
             Surname = Convert.ToString(reader.GetValue(1)),
             IDBuyer = Convert.ToString(reader.GetValue(2)),
             Phone = Convert.ToString(reader.GetValue(3)),
+            Email = Convert.ToString(reader.GetValue(4)),
         };
         return ContructorRead;
     }

@@ -74,13 +74,14 @@ namespace Converter
                     ValueNet = Methods.GetSumInvoiceElementNet(connectionString, NumberCurrentInvoice);
                     ValueGross = Methods.GetSumInvoiceElementGross(connectionString, NumberCurrentInvoice);
                     var allInvoiceElements = Methods.GetInvoiceElements(SqlHelper.getConnection(), NumberCurrentInvoice);
+                    string email = Methods.ContractorMail(connectionString, ContractorId);
                     RefreshElements(allInvoiceElements);
 
                     Methods.AddNewInvoice(connectionString, NumberCurrentInvoice, (DocumentDate).ToString(), Convert.ToDecimal(ValueGross), Convert.ToDecimal(ValueNet), ContractorId, UserID, FullNumberInvoice);
 
                     MessageBox.Show("An invoice has been added");
 
-                    MailMessage mm = new MailMessage("justtesttk@gmail.com", "tomasz.polkas@gmail.com");
+                    MailMessage mm = new MailMessage("justtesttk@gmail.com", email);
                     mm.Subject = "New invoice from MiniERP";
                     mm.Body = $"You have new Invoice: \n\r {FullNumberInvoice} in the amount of {ValueGross} EUR";
                     SmtpClient smtp = new SmtpClient();

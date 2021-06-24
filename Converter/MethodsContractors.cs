@@ -104,7 +104,7 @@ namespace Converter
 
         public static List<Contractor> GetContractors(string connectionString)
         {
-            string SelectAllContractors = @"Select Name, Surname, IDBuyer, Phone from dbo.Constructors";
+            string SelectAllContractors = @"Select Name, Surname, IDBuyer, Phone, email from dbo.Constructors";
             using (var conn = SqlHelper.OpenConnection(connectionString))
             {
                 using (var comm = new SqlCommand(SelectAllContractors, conn))
@@ -146,9 +146,9 @@ namespace Converter
 
 
 
-        public static int EditContractor(string connectionString, string parametr1, string parametr2, string parametr3, string parametr4)
+        public static int EditContractor(string connectionString, string parametr1, string parametr2, string parametr3, string parametr4, string parametr5)
         {
-            var queryString = @"update dbo.Constructors set Name =@Name, Surname = @Surname, Phone = @Phone where IDBuyer = @IDBuyer";
+            var queryString = @"update dbo.Constructors set Name =@Name, Surname = @Surname, Phone = @Phone, Email = @Email where IDBuyer = @IDBuyer";
             using (var conn = SqlHelper.OpenConnection(connectionString))
             {
                 using (var comm = new SqlCommand(queryString, conn))
@@ -157,6 +157,7 @@ namespace Converter
                     comm.Parameters.AddWithValue("@Surname", parametr2);
                     comm.Parameters.AddWithValue("@IDBuyer", parametr3);
                     comm.Parameters.AddWithValue("@Phone", parametr4);
+                    comm.Parameters.AddWithValue("@Email", parametr5);
                     var result = comm.ExecuteNonQuery();
 
                     return result;

@@ -33,7 +33,6 @@
             this.textBox_ImportFilePath = new System.Windows.Forms.TextBox();
             this.textBox_Name = new System.Windows.Forms.TextBox();
             this.textBox_Surname = new System.Windows.Forms.TextBox();
-            this.textBox_IDBuyer = new System.Windows.Forms.TextBox();
             this.textBox_Phone = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,6 +43,9 @@
             this.button_Delete = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonContractorHistory = new System.Windows.Forms.Button();
+            this.textBox_IDBuyer = new System.Windows.Forms.TextBox();
+            this.textBox_mail = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Contractors)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,15 +88,6 @@
             this.textBox_Surname.Name = "textBox_Surname";
             this.textBox_Surname.Size = new System.Drawing.Size(100, 20);
             this.textBox_Surname.TabIndex = 21;
-            // 
-            // textBox_IDBuyer
-            // 
-            this.textBox_IDBuyer.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Converter.Properties.Settings.Default, "ContractorID", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.textBox_IDBuyer.Location = new System.Drawing.Point(294, 77);
-            this.textBox_IDBuyer.Name = "textBox_IDBuyer";
-            this.textBox_IDBuyer.Size = new System.Drawing.Size(100, 20);
-            this.textBox_IDBuyer.TabIndex = 22;
-            this.textBox_IDBuyer.Text = global::Converter.Properties.Settings.Default.ContractorID;
             // 
             // textBox_Phone
             // 
@@ -193,11 +186,38 @@
             this.buttonContractorHistory.UseVisualStyleBackColor = true;
             this.buttonContractorHistory.Click += new System.EventHandler(this.buttonContractorHistory_Click);
             // 
+            // textBox_IDBuyer
+            // 
+            this.textBox_IDBuyer.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::Converter.Properties.Settings.Default, "ContractorID", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.textBox_IDBuyer.Location = new System.Drawing.Point(294, 77);
+            this.textBox_IDBuyer.Name = "textBox_IDBuyer";
+            this.textBox_IDBuyer.Size = new System.Drawing.Size(100, 20);
+            this.textBox_IDBuyer.TabIndex = 22;
+            this.textBox_IDBuyer.Text = global::Converter.Properties.Settings.Default.ContractorID;
+            // 
+            // textBox_mail
+            // 
+            this.textBox_mail.Location = new System.Drawing.Point(522, 77);
+            this.textBox_mail.Name = "textBox_mail";
+            this.textBox_mail.Size = new System.Drawing.Size(100, 20);
+            this.textBox_mail.TabIndex = 33;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(519, 61);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(34, 13);
+            this.label6.TabIndex = 34;
+            this.label6.Text = "e-mail";
+            // 
             // WM_Contractors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.textBox_mail);
             this.Controls.Add(this.buttonContractorHistory);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button_Delete);
@@ -241,5 +261,7 @@
         private System.Windows.Forms.Button button_Delete;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonContractorHistory;
+        private System.Windows.Forms.TextBox textBox_mail;
+        private System.Windows.Forms.Label label6;
     }
 }

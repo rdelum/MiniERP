@@ -174,7 +174,20 @@ namespace Converter
             }
 
         }
+        public static string ContractorMail(string connectionString, string parametr1)
+        {
+            string sql = @"select top 1 email from dbo.Constructors where IDBuyer = @ContractorID";
 
+            using (var conn = SqlHelper.OpenConnection(connectionString))
+            {
+                var cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@ContractorID", parametr1);
+                string ContractorMail = (cmd.ExecuteScalar()).ToString();
+                conn.Close();
+                return ContractorMail;
+            }
+
+        }
 
 
 
