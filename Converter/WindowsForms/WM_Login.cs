@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,7 +19,7 @@ namespace Converter
         public WM_Login()
         {
             InitializeComponent();
-           Methods.FillCombo(comboBoxUserName);
+            Methods.FillCombo(comboBoxUserName);
         }
 
         private void Button_SQLConfiguration_Click(object sender, EventArgs e)
@@ -31,7 +32,7 @@ namespace Converter
         private void button_login_Click(object sender, EventArgs e)
         {
             var connectionString = SqlHelper.getConnection();
-            SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) from dbo.Users where UserName ='" + comboBoxUserName.Text + "' and UserP ='" + textBox_password.Text + "'", connectionString);
+            SqlDataAdapter sda = new SqlDataAdapter("Select Count(*) from dbo.Users where UserName ='" + comboBoxUserName.Text + "' and UserP ='" + Methods.Hash_SHA1(textBox_password.Text) + "'", connectionString);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             if (dt.Rows[0][0].ToString() == "1")
@@ -47,6 +48,6 @@ namespace Converter
             }
         }
 
-   
+      
     }
 }

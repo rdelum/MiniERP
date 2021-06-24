@@ -32,9 +32,9 @@
             this.button_login = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.comboBoxUserName = new System.Windows.Forms.ComboBox();
             this.textBox_password = new System.Windows.Forms.TextBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // Button_SQLConfiguration
@@ -99,7 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(388, 228);
+            this.ClientSize = new System.Drawing.Size(428, 244);
             this.Controls.Add(this.comboBoxUserName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
